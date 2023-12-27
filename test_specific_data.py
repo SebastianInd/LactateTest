@@ -18,10 +18,17 @@ def get_speed(
     return speeds
 
 
-def get_measurement_times(times: List[datetime], time_interval: timedelta):
+def get_measurement_times(
+    times: List[datetime],
+    time_interval: timedelta,
+    basal_measurement: bool,
+    end_measurement: bool,
+):
     measurement_times = []
-    measurement_time = times[0] + time_interval
+    measurement_time = times[0] if basal_measurement else times[0] + time_interval
     while measurement_time < times[-1]:
         measurement_times.append(measurement_time)
         measurement_time += time_interval
+    if end_measurement:
+        measurement_times.append(times[-1])
     return measurement_times
