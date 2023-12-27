@@ -14,3 +14,6 @@ Tcx file: the name of the tcx file produced in the test (needs to be in the same
 ## Test measurements
 RPE: rate of perceived exertion (use the scale you prefer)
 Lactate: lactate measurements
+
+## Example
+![Example](example.png)
